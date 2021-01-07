@@ -15,7 +15,9 @@ When all questions have been answered or the time runs out, the game is over.
 You are then able to save your score with your username.
 
 ![Title Screen Picture](https://github.com/mtbishop/04-Code-Quiz/blob/main/docs/demo/title%20screen.PNG)
+
 ![Questions Picture](https://github.com/mtbishop/04-Code-Quiz/blob/main/docs/demo/questions.PNG)
+
 ![High Scores Picture](https://github.com/mtbishop/04-Code-Quiz/blob/main/docs/demo/high%20score%20screen.PNG)
 
 Live Link: https://mtbishop.github.io/04-Code-Quiz/
