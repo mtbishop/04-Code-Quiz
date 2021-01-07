@@ -9,7 +9,7 @@ let score = 0;
 let penalty = 10;
 let questionCounter = 0;
 let availableQuestions = [];
-
+// questions array
 let questions = [
   {
     question: 'How do you find the number with the highest value of x and y?',
@@ -57,6 +57,25 @@ const CORRECT_BONUS = 10;
 // total amount of questions
 const MAX_QUESTIONS = 5;
 
+// couldn't get timer working in time for turn in. will update later with working timer
+document.addEventListener('DOMContentLoaded', () => {
+  const timeLeftDisplay = document.querySelector('#time-left')
+  const startBtn = document.querySelector('#start-button')
+  let timeLeft = 80;
+
+  function countDown() {
+    setInterval(function() {
+      if(timeleft <= 0) {
+        clearInterval(timeLeft = 0)
+      }
+      timeLeftDisplay.innerHTML = timeLeft
+      timeLeft -= 1
+    }, 1000)
+  }
+  startBtn.getElementById('click',countDown);
+})
+
+
 function startGame() {
   // starts at first question
   questionCounter = 0;
@@ -66,6 +85,7 @@ function startGame() {
   // runs first question
   getNewQuestion();
 }
+
 
 function getNewQuestion() {
     // when the last question is answered, it ...
@@ -123,3 +143,4 @@ incrementScore = (num) => {
 };
 
 startGame();
+

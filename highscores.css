@@ -7,8 +7,12 @@
 .high-score {
     font-size: 2.8rem;
     margin-bottom: 0.5rem;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .high-score:hover {
     transform: scale(1.025);
+}
+h1 {
+    font-family: 'Roboto Condensed', sans-serif;
 }

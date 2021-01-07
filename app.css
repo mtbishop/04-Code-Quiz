@@ -1,5 +1,5 @@
 :root {
-    background-color: #ecf5ff;
+    background-color: #121212;
     font-size: 62.5%;
 }
 
@@ -12,10 +12,11 @@
 }
 h1, h2, h3, h4 {
     margin-bottom: 1rem;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 h1 {
     font-size: 5.4rem;
-    color: #56a5eb;
+    color: #BB86FC;
     margin-bottom: 5rem;
 }
 h1 > span {
@@ -72,17 +73,17 @@ h3 {
     padding: 1rem 0;
     width: 20rem;
     text-align: center;
-    border: 0.1rem solid #56a5eb;
     margin-bottom: 1rem;
     text-decoration: none;
-    color: #56a5eb;
-    background-color: white;
+    color: #121212;
+    background-color: #BB86FC;
     border-radius: 4rem;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .btn:hover {
     cursor: pointer;
-    box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(231, 151, 238, 0.652);
     transform: translateY(-.01rem);
     transition: transform 150ms;
 }

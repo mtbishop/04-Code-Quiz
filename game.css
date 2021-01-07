@@ -3,33 +3,36 @@
   margin-bottom: 0.5rem;
   width: 100%;
   font-size: 1.8rem;
-  border: 0.1rem solid rgb(86, 165, 235, 0.25);
-  background-color: white;
+  background-color: #535354;
   border-radius: 4rem;
+  color: white;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .choice-container:hover {
   cursor: pointer;
-  box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+  box-shadow: 0 0.4rem 1.4rem 0 rgba(231, 151, 238, 0.652);
   transform: translateY(-0.01rem);
   transition: transform 150ms;
 }
 
 .choice-prefix {
   padding: 1.5rem 2rem;
-  background-color: #56a5eb;
+  background-color: #BB86FC;
   color: white;
   border-radius: 4rem;
 }
 
 .choice-text {
   padding: 1.5rem;
+  color: white;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 .correct {
     background-color: #28a745;
 }
 .incorrect {
-    background-color: #b13325;
+    background-color: #A63D4D;
 }
 
 #hud {
@@ -40,6 +43,8 @@
 .hud-prefix {
     text-align: center;
     font-size: 2rem;
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .hud-main-text {
@@ -50,10 +55,18 @@
     margin: 1rem;
 }
 
-#startTime {
-    background-color: purple;
-    margin-left: 33%;
-    padding: 15px 32px;
-    font-size: 20px;
-    color: white;
+h2 {
+  color: white;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+h3 {
+  color: white;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+#time-left {
+  
+  color: white;
+}
+a {
+  font-family: 'Roboto Condensed', sans-serif;
 }
