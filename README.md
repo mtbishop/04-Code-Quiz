@@ -19,4 +19,5 @@ You are then able to save your score with your username.
 ![High Scores Picture](https://github.com/mtbishop/04-Code-Quiz/blob/main/docs/demo/high%20score%20screen.PNG)
 
 Live Link: https://mtbishop.github.io/04-Code-Quiz/
+
 Repository: https://github.com/mtbishop/04-Code-Quiz
