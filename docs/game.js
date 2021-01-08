@@ -9,7 +9,27 @@ let score = 0;
 let penalty = 10;
 let questionCounter = 0;
 let availableQuestions = [];
+// score value for correct answers
+const CORRECT_BONUS = 10;
+// total amount of questions
+const MAX_QUESTIONS = 5;
+
+// timer variables
+let timeLeft = 80;
+var t;
+// timer function
+function countDown() {
+  document.getElementById('time-left').value = timeLeft;
+  t = setTimeout(countDown, 1000);
+  if (timeLeft <= 0) {
+    clearTimeout(t);
+  }
+  timeLeft--;
+}
+window.onload = countDown;
+
 // questions array
+
 let questions = [
   {
     question: 'How do you find the number with the highest value of x and y?',
@@ -52,25 +72,6 @@ let questions = [
     answer: 2,
   },
 ];
-// score value for correct answers
-const CORRECT_BONUS = 10;
-// total amount of questions
-const MAX_QUESTIONS = 5;
-
-let timeLeft = 80;
-var t;
-
-function countDown() {
-  document.getElementById('time-left').value = timeLeft;
-    t = setTimeout(countDown, 1000);
-    if(timeLeft <= 0) {
-      clearTimeout(t);
-    }
-    timeLeft --;
-  };
-  window.onload = countDown;
-
-
 
 function startGame() {
   // starts at first question
@@ -82,11 +83,12 @@ function startGame() {
   getNewQuestion();
 }
 
-
 function getNewQuestion() {
-    // when the last question is answered, it ...
+  // when the last question is answered, it ...
   if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+    // ends timer when quiz is complete
     clearTimeout(t);
+    // score is given based on time left, cut in half, then added to final score
     timeLeft = timeLeft * 0.5;
     localStorage.setItem('mostRecentScore', score + timeLeft);
     // goes to end page
@@ -100,7 +102,7 @@ function getNewQuestion() {
   currentQuestion = availableQuestions[questionIndex];
   question.innerText = currentQuestion.question;
 
-  // selects the correct answer by number value 
+  // selects the correct answer by number value
   choices.forEach((choice) => {
     const number = choice.dataset['number'];
     choice.innerText = currentQuestion['choice' + number];
@@ -123,14 +125,16 @@ choices.forEach((choice) => {
       selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
     // adds CORRECT_BONUS value if answer is correct
     if (classToApply === 'correct') {
+      //if answer is correct, you get the correct bonus
       incrementScore(CORRECT_BONUS);
     }
+    // if answer is incorrect the time is penalized by penalty value
     else {
       timeLeft = timeLeft - penalty;
     }
 
     selectedChoice.parentElement.classList.add(classToApply);
-
+    // adds incorrect and correct class depending on answer choice
     setTimeout(() => {
       selectedChoice.parentElement.classList.remove(classToApply);
       getNewQuestion();
@@ -144,4 +148,3 @@ incrementScore = (num) => {
 };
 
 startGame();
-

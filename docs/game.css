@@ -18,7 +18,7 @@
 
 .choice-prefix {
   padding: 1.5rem 2rem;
-  background-color: #BB86FC;
+  background-color: #bb86fc;
   color: white;
   border-radius: 4rem;
 }
@@ -29,30 +29,30 @@
   font-family: 'Roboto Condensed', sans-serif;
 }
 .correct {
-    background-color: #28a745;
+  background-color: #28a745;
 }
 .incorrect {
-    background-color: #A63D4D;
+  background-color: #a63d4d;
 }
 
 #hud {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .hud-prefix {
-    text-align: center;
-    font-size: 2rem;
-    color: white;
-    font-family: 'Roboto Condensed', sans-serif;
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .hud-main-text {
-    text-align: center;
+  text-align: center;
 }
 
 #main-screen {
-    margin: 1rem;
+  margin: 1rem;
 }
 
 h2 {
@@ -64,14 +64,15 @@ h3 {
   font-family: 'Roboto Condensed', sans-serif;
 }
 #time-left {
-  
   color: white;
 }
 a {
   font-family: 'Roboto Condensed', sans-serif;
 }
 input {
-  background-color: black;
+  background-color: #121212;
   text-align: center;
   font-size: larger;
+  border-radius: 3rem;
+  margin: 1rem;
 }
