@@ -57,23 +57,19 @@ const CORRECT_BONUS = 10;
 // total amount of questions
 const MAX_QUESTIONS = 5;
 
-// couldn't get timer working in time for turn in. will update later with working timer
-document.addEventListener('DOMContentLoaded', () => {
-  const timeLeftDisplay = document.querySelector('#time-left')
-  const startBtn = document.querySelector('#start-button')
-  let timeLeft = 80;
+let timeLeft = 80;
+var t;
 
-  function countDown() {
-    setInterval(function() {
-      if(timeleft <= 0) {
-        clearInterval(timeLeft = 0)
-      }
-      timeLeftDisplay.innerHTML = timeLeft
-      timeLeft -= 1
-    }, 1000)
-  }
-  startBtn.getElementById('click',countDown);
-})
+function countDown() {
+  document.getElementById('time-left').value = timeLeft;
+    t = setTimeout(countDown, 1000);
+    if(timeLeft <= 0) {
+      clearTimeout(t);
+    }
+    timeLeft --;
+  };
+  window.onload = countDown;
+
 
 
 function startGame() {
@@ -90,7 +86,9 @@ function startGame() {
 function getNewQuestion() {
     // when the last question is answered, it ...
   if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
-    localStorage.setItem('mostRecentScore', score);
+    clearTimeout(t);
+    timeLeft = timeLeft * 0.5;
+    localStorage.setItem('mostRecentScore', score + timeLeft);
     // goes to end page
     return window.location.assign('end.html');
   }
@@ -126,6 +124,9 @@ choices.forEach((choice) => {
     // adds CORRECT_BONUS value if answer is correct
     if (classToApply === 'correct') {
       incrementScore(CORRECT_BONUS);
+    }
+    else {
+      timeLeft = timeLeft - penalty;
     }
 
     selectedChoice.parentElement.classList.add(classToApply);

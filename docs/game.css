@@ -70,3 +70,8 @@ h3 {
 a {
   font-family: 'Roboto Condensed', sans-serif;
 }
+input {
+  background-color: black;
+  text-align: center;
+  font-size: larger;
+}
